@@ -13,4 +13,16 @@ class Weather {
       weather,
     };
   }
+
+  async getWeatherByCoords(lat, lon) {
+    const weatherResponse = await fetch(
+      `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${this.apiKey}`
+    );
+
+    const weather = await weatherResponse.json();
+
+    return {
+      weather,
+    };
+  }
 }

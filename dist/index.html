@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="style.css" rel="stylesheet" />
+    <script src="https://maps.api.2gis.ru/2.0/loader.js?pkg=full"></script>
+    <title>Weather Fetcher</title>
+  </head>
+  <body>
+    <div class="flex h-screen relative">
+      <div
+        class="m-auto bg-blue-400 text-center rounded p-8 container-md flex h-screen w-screen sm:h-auto sm:w-auto"
+      >
+        <div class="m-auto w-screen sm:w-64">
+          <h1 id="city-name" class="text-white text-4xl"></h1>
+          <div id="map" class="h-32 rounded m-auto mt-2 mb-2"></div>
+          <p id="character" class="mb-2 text-xl text-gray-800"></p>
+          <p id="temperature" class="text-white text-xl"></p>
+          <img id="weather-icon" class="m-auto" />
+          <p id="comment" class="text-gray-700"></p>
+          <div
+            class="m-auto mt-4 mb-4 rounded text-gray-600 text-xs font-light bg-white"
+          >
+            <p class="field" id="humidity"></p>
+            <p class="field" id="pressure"></p>
+            <p class="field" id="feels-like"></p>
+            <p class="field border-none" id="wind"></p>
+          </div>
+          <button id="button" class="btn w-32 text-white bg-blue-600">
+            Change Location
+          </button>
+        </div>
+      </div>
+      <div
+        class="fixed z-10 bg-gray-900 bg-opacity-50 transition delay-300 h-screen w-screen flex hidden"
+        id="form-container"
+      >
+        <div class="m-auto bg-white rounded" style="width: 450px">
+          <div class="p-2 flex justify-between border-b text-blue-700">
+            <p>Location</p>
+            <img
+              src="../src/cross.svg"
+              width="15"
+              id="cross"
+              class="cursor-pointer"
+            />
+          </div>
+          <form class="p-2">
+            <label for="city">Country</label>
+            <input
+              type="text"
+              id="city"
+              name="city"
+              class="w-full border rounded mt-2 mb-2 h-8 pl-2"
+            />
+            <div class="flex justify-end">
+              <button type="reset" class="btn border mr-2" id="clear">
+                Clear
+              </button>
+              <button
+                type="submit"
+                class="btn text-white bg-blue-600"
+                id="submit"
+              >
+                Save Changes
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="js/weather.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

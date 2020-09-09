@@ -1,0 +1,13 @@
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+.btn {
+  @apply p-2 text-xs rounded;
+}
+
+.field {
+  @apply p-2 border-b;
+}

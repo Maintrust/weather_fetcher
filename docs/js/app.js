@@ -12,10 +12,12 @@ document.addEventListener("DOMContentLoaded", () => {
     navigator.geolocation.getCurrentPosition(
       (pos) => {
         console.log(pos);
-        weather.getWeather(pos).then((data) => {
-          console.log(data);
-          ui.changeCity(data);
-        });
+        weather
+          .getWeatherByCoords(pos.coords.latitude, pos.coords.longitude)
+          .then((data) => {
+            console.log(data);
+            ui.changeCity(data);
+          });
       },
       (e) => {
         let position = "Saint Petersburg";

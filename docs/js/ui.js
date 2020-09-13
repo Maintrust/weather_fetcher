@@ -21,9 +21,11 @@ class UI {
     });
 
     city.textContent = data.weather.name + ", " + data.weather.sys.country;
-    character.textContent = data.weather.weather[0].main;
-    tempr.textContent =
-      Math.round(data.weather.main.temp - 273.15) + ` C\u00b0`;
+    character.textContent =
+      data.weather.weather[0].main +
+      ", " +
+      Math.round(data.weather.main.temp - 273.15) +
+      ` C\u00b0`;
     humidity.textContent =
       "Relative humidity: " + data.weather.main.humidity + "%";
     feelsLike.textContent =

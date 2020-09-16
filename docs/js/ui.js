@@ -32,7 +32,7 @@ class UI {
       "Feels like: " +
       Math.round(data.weather.main.feels_like - 273.15) +
       " C\u00b0";
-    pressure.textContent = "Pressure: " + data.weather.main.pressure;
+    pressure.textContent = "Pressure: " + data.weather.main.pressure + " hPa";
     wind.textContent = "Wind: " + data.weather.wind.speed + " m/s";
     weatherIcon.src = `http://openweathermap.org/img/wn/${data.weather.weather[0].icon}.png`;
     const dayNight =

@@ -2,7 +2,6 @@ const city = document.getElementById("city-name");
 const character = document.getElementById("character");
 const tempr = document.getElementById("temperature");
 const weatherIcon = document.getElementById("weather-icon");
-const comment = document.getElementById("comment");
 const humidity = document.getElementById("humidity");
 const pressure = document.getElementById("pressure");
 const feelsLike = document.getElementById("feels-like");
@@ -21,8 +20,12 @@ class UI {
     });
 
     city.textContent = data.weather.name + ", " + data.weather.sys.country;
+    const dayNight =
+      data.weather.weather[0].icon.slice(-1) == "d" ? "Day" : "Night";
     character.textContent =
-      data.weather.weather[0].main +
+      dayNight +
+      ", " +
+      data.weather.weather[0].description +
       ", " +
       Math.round(data.weather.main.temp - 273.15) +
       ` C\u00b0`;
@@ -35,9 +38,5 @@ class UI {
     pressure.textContent = "Pressure: " + data.weather.main.pressure + " hPa";
     wind.textContent = "Wind: " + data.weather.wind.speed + " m/s";
     weatherIcon.src = `http://openweathermap.org/img/wn/${data.weather.weather[0].icon}.png`;
-    const dayNight =
-      data.weather.weather[0].icon.slice(-1) == "d" ? "Day" : "Night";
-
-    comment.textContent = dayNight + ", " + data.weather.weather[0].description;
   }
 }

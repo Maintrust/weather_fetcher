@@ -11,3 +11,10 @@
 .field {
   @apply p-2 border-b;
 }
+
+@media screen and (orientation: landscape) and (max-width: 823px) {
+  .w-lanscape-device {
+    width: 100vw !important;
+    height: auto !important;
+  }
+}

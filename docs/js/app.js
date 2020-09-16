@@ -1,3 +1,12 @@
+window.addEventListener(
+  "orientationchange",
+  function () {
+    // Выводим числовое значение ориентации
+    console.log("ПОВЕРНУЛИ!");
+  },
+  false
+);
+
 document.addEventListener("DOMContentLoaded", () => {
   if (localStorage.city) {
     const weather = new Weather();
